@@ -16,7 +16,9 @@ export class SignUpComponent extends BlankLayoutCardComponent implements OnInit 
   public signupForm: FormGroup;
   private email;
   private password;
-  private username;
+  private passwordCheck;
+  private firstName;
+  private lastName;
   public emailPattern = '^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$';
   public error: string;
 
@@ -27,16 +29,20 @@ export class SignUpComponent extends BlankLayoutCardComponent implements OnInit 
 
     this.signupForm = this.fb.group({
       password: new FormControl('', Validators.required),
+      passwordCheck: new FormControl('', Validators.required),
       email: new FormControl('', [
         Validators.required,
         Validators.pattern(this.emailPattern),
         Validators.maxLength(20),
       ]),
-      username: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      firstName: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      lastName: new FormControl('', [Validators.required, Validators.maxLength(10)]),
     });
     this.email = this.signupForm.get('email');
     this.password = this.signupForm.get('password');
-    this.username = this.signupForm.get('username');
+    this.passwordCheck = this.signupForm.get('passwordCheck');
+    this.firstName = this.signupForm.get('firstName');
+    this.lastName = this.signupForm.get('lastName');
   }
 
   public ngOnInit() {
@@ -46,13 +52,13 @@ export class SignUpComponent extends BlankLayoutCardComponent implements OnInit 
     });
   }
 
-  public login() {
+  public register() {
     this.error = null;
-    if (this.signupForm.valid) {
-      this.authService.signup(this.signupForm.getRawValue())
+    
+      this.authService.register(JSON.stringify(this.signupForm.value))
         .subscribe(res => this.router.navigate(['/app/dashboard']),
                    error => this.error = error.message);
-    }
+    
   }
 
   public onInputChange(event) {

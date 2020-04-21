@@ -1,37 +1,41 @@
 <base-card>
   <base-card-title>
     <h2>Profile</h2>
-    <div class="mdl-card__subtitle">My profile</div>
+    <div class="mdl-card__subtitle">Your profile</div>
   </base-card-title>
   <base-card-body>
-    <form action="#" class="form">
+    <form class="form" [formGroup]="profileForm" (submit)="update()" novalidate autocomplete="off">
       <div class="form__article">
         <h3>Personal data</h3>
 
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="firstName" value="Luke"/>
-            <label class="mdl-textfield__label" for="firstName">First name</label>
+            <input formControlName="firstName" class="mdl-textfield__input" type="text" id="firstName" />
+            <label class="mdl-textfield__label" for="firstName">FirstName</label>
           </div>
 
           <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="secondName" value="Skywalker"/>
-            <label class="mdl-textfield__label" for="secondName">Second name</label>
+            <input formControlName="lastName" class="mdl-textfield__input" type="text" id="lastName"
+              value="Skywalker" />
+            <label class="mdl-textfield__label" for="lastName">LastName</label>
           </div>
         </div>
 
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="birthday" value="25 May, 1977"/>
-            <label class="mdl-textfield__label" for="birthday">Birthday</label>
+            <input formControlName="password" class="mdl-textfield__input" type="password" id="password" />
+            <label class="mdl-textfield__label" for="password">Password</label>
           </div>
-
+          <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input formControlName="passwordCheck" class="mdl-textfield__input" type="password" id="passwordCheck" />
+            <label class="mdl-textfield__label" for="passwordCheck">Retype password</label>
+          </div>
+        </div>
+        <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--6-col">
-            <material-angular-select [data]="['Male', 'Female']"
-                                  [label]="'Gender'"
-                                  [name]="'gender'"
-                                  [currentValue]="'Male'"
-                                  [fixHeight]="true"></material-angular-select>
+            <material-angular-select [data]="['Male', 'Female']" [label]="'Gender'" [name]="'gender'"
+              [currentValue]="'Male'" [fixHeight]="true" (selectedValue)="changeGender($event)">
+            </material-angular-select>
           </div>
         </div>
       </div>
@@ -41,30 +45,29 @@
 
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" value="BioReg" id="company" disabled/>
+            <input class="mdl-textfield__input" type="text" value="BioReg" id="company" disabled />
             <label class="mdl-textfield__label" for="company">Company</label>
           </div>
           <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="company_email" value="bioreginc@gmail.com" disabled/>
+            <input class="mdl-textfield__input" type="text" id="company_email" value="bioreginc@gmail.com" disabled />
             <label class="mdl-textfield__label" for="company_email">Company email</label>
           </div>
         </div>
 
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" value="Lead developer" id="position"/>
+            <input formControlName="position" class="mdl-textfield__input" type="text" value="Lead developer"
+              id="position" />
             <label class="mdl-textfield__label" for="position">Position</label>
           </div>
           <div class="mdl-cell mdl-cell--6-col">
-            <material-angular-select [data]="qualifications"
-                                  [label]="'Qualification'"
-                                  [name]="'qualification'"
-                                  [currentValue]="'Junior'"
-                                  [fixHeight]="true"></material-angular-select>
+            <material-angular-select [data]="qualifications" [label]="'Qualification'" [name]="'qualification'"
+              [currentValue]="'Junior'" [fixHeight]="true" (selectedValue)="changeQualification($event)">
+            </material-angular-select>
           </div>
         </div>
 
-       <!-- <span>Type of employment:</span>
+        <!-- <span>Type of employment:</span>
 
         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="partition-fulltime">
           <input type="radio" id="partition-fulltime" class="mdl-radio__button" name="employment" value="1" checked/>
@@ -88,8 +91,8 @@
             <i class="material-icons pull-left">call</i>
 
             <div class="mdl-textfield mdl-js-textfield pull-left">
-              <input class="mdl-textfield__input" type="text" id="phone">
-              <label class="mdl-textfield__label" for="phone">XXX-XX-XX</label>
+              <input formControlName="phoneNumber" class="mdl-textfield__input" type="text" id="phoneNumber">
+              <label class="mdl-textfield__label" for="phoneNumber">XXX-XX-XX</label>
             </div>
           </div>
 
@@ -122,7 +125,8 @@
             <i class="material-icons pull-left">mail_outline</i>
 
             <div class="mdl-textfield mdl-js-textfield pull-left">
-              <input class="mdl-textfield__input" type="text" id="email" value="luke@skywalker.com"/>
+              <input formControlName="email" class="mdl-textfield__input" type="text" id="email"
+                value="luke@skywalker.com" />
               <label class="mdl-textfield__label" for="email">Email</label>
             </div>
           </div>
@@ -163,11 +167,11 @@
 
       <div class="form__action">
         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="isInfoReliable">
-          <input #isInfoReliable type="checkbox" id="isInfoReliable" class="mdl-checkbox__input" required/>
+          <input #isInfoReliable type="checkbox" id="isInfoReliable" class="mdl-checkbox__input" required />
           <span class="mdl-checkbox__label">Entered information is reliable</span>
         </label>
         <button [disabled]="!isInfoReliable.checked" id="submit_button"
-                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
           Submit
         </button>
       </div>

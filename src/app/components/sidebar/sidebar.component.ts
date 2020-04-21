@@ -37,6 +37,8 @@ export class SidebarComponent extends BaseSidebarComponent {
     { name: 'Components', link: '/app/components', icon: 'developer_board' },
     { name: 'Account', link: '/app/profile', icon: 'person' },
     { name: 'Register Employees', link: '/app/register-employee', icon: 'person' },
+    { name: 'List Employees', link: '/app/list-admins', icon: 'person' },
+    { name: 'List Users', link: '/app/list-users', icon: 'person' },
     {
       name: 'Maps', icon: 'map', children: [
       { name: 'Simple map', link: '/maps/simple' },

@@ -10,6 +10,8 @@ import { Dashboard2Component } from './pages/dashboard2';
 import { FormsComponent } from './pages/forms';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterEmployeeComponent } from './pages/register-employee/register-employee.component';
+import { ListAdminsComponent } from './pages/list-admins/list-admins.component';
+import { ListUsersComponent } from './pages/list-users/list-users.component';
 
 @NgModule({
   imports: [
@@ -22,6 +24,8 @@ import { RegisterEmployeeComponent } from './pages/register-employee/register-em
           { path: 'forms', component: FormsComponent, pathMatch: 'full' },
           { path: 'profile', component: ProfileComponent, pathMatch: 'full' },
           { path: 'register-employee', component: RegisterEmployeeComponent, pathMatch: 'full' },
+          { path: 'list-admins', component: ListAdminsComponent, pathMatch: 'full' },
+          { path: 'list-users', component: ListUsersComponent, pathMatch: 'full' },
           { path: 'charts', component: ChartsComponent, pathMatch: 'full' },
           { path: 'components', component: ComponentsComponent, pathMatch: 'full' },
           { path: '**', redirectTo: '/pages/404' },

@@ -36,6 +36,7 @@ export class AuthService {
           return this.user;
         }));
   }*/
+
   login(body:any)
   {
     return this.http.post(this.url+'/login',body,{
@@ -55,7 +56,7 @@ export class AuthService {
       }));
   }
 
-  public signup(data) {
+  /*public signup(data) {
     return this.http.post(`${this.url}/signup`, data)
       .pipe(
         map((res: { user: any, token: string }) => {
@@ -67,6 +68,30 @@ export class AuthService {
           this.isLogged$.next(true);
           return this.user;
         }));
+  }*/
+
+  register(body:any)
+  {
+    return this.http.post(this.url+'/register',body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  adminProfile()
+  {
+    return this.http.get(this.url+'/adminProfile',{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+  updateProfile(body:any)
+  {
+    return this.http.put(this.url+'/updateProfile',body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
   }
 
   public get authToken(): string {

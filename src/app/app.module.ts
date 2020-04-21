@@ -10,14 +10,20 @@ import { ChartsModule } from './pages/charts';
 import { ComponentsModule } from './pages/components';
 import { DashboardModule } from './pages/dashboard';
 import { Dashboard2Module } from './pages/dashboard2';
-import { FormsModule } from './pages/forms';
+import { FormsModule as Forms} from './pages/forms';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ThemeModule } from 'theme';
 import { MaterialAngularSelectModule } from 'material-angular-select';
 import { RegisterEmployeeComponent } from './pages/register-employee/register-employee.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ListAdminsComponent } from './pages/list-admins/list-admins.component';
+import { ListUsersComponent } from './pages/list-users/list-users.component';
 
 @NgModule({
-  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent],
+  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,10 +31,20 @@ import { RegisterEmployeeComponent } from './pages/register-employee/register-em
     DashboardModule,
     Dashboard2Module,
     
+    Forms,
     FormsModule,
+    ReactiveFormsModule,
     ChartsModule,
     ThemeModule,
     MaterialAngularSelectModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      progressBar:true,
+      progressAnimation:"increasing",
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }), // ToastrModule added
     
     HttpClientModule,
   ],
