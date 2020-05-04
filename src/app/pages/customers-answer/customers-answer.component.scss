@@ -1,0 +1,128 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Share', cursive;
+  }
+  
+  #home {
+    position:fixed;
+    z-index: 1000;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  .main-app {
+    height: 90%;
+    background-color:transparent;
+    color: #ecf0f1;
+  }
+  
+  .carousel-cell {
+    height: inherit;
+    width: 70%;
+  }
+  
+  .screen {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #share {
+    background-color: #c0392b;
+  }
+  
+  .topic {
+    background-color: white;
+    border-radius: 8px;
+    min-width: 450px;
+    max-width: 1000px;
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 5px;
+    color: black;
+  }
+  
+  /* Chat CSS */
+  
+  #chat {
+    background-color: transparent;
+  }
+  
+  .shared-image {
+    max-width: 150px;
+    border-radius: 5px;
+  }
+  
+  .messages {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 0px 15px;
+  }
+  
+  .message {
+    padding: 10px;
+    margin: 10px 30px;
+    border-radius: 3px;
+    max-width: 300px;
+    color: #ecf0f1;
+  }
+  
+  .them {
+    align-self: flex-start;
+    background-color: #34495e;
+    padding-left: 20px;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10px 100%, 10px 15px);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10px 100%, 10px 15px);
+  }
+  
+  .you {
+    align-self: flex-end;
+    background-color: #27ae60;
+    -webkit-clip-path: polygon(0 0, 0 100%, 85% 100%, 85% 30%, 100% 0);
+    clip-path: polygon(0 0, 100% 0%, calc(100% - 10px) 15px, calc(100% - 10px) 100%, 0% 100%);
+    padding-right: 20px;
+  }
+  
+  .message-field {
+    width: 100%;
+    text-align: center;
+    justify-self: flex-end;
+    padding: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .message-title {
+    color: #bdc3c7;
+    padding: 2px 10px;
+    margin-left: 30px;
+    border-left: 5px solid;
+    border-radius: 0px;
+  }
+  
+  .chat-input {
+      flex-grow: 2;
+      padding: 10px;
+      border-radius: 30px;
+      margin: 5px 30px;
+      border: 2px solid #34495e;
+      color: black;
+  }
+  
+  .send-button {
+    background-color: #27ae60;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 20px;
+    color: #ecf0f1;
+  }
+  
+  

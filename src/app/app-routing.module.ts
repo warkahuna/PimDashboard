@@ -12,6 +12,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterEmployeeComponent } from './pages/register-employee/register-employee.component';
 import { ListAdminsComponent } from './pages/list-admins/list-admins.component';
 import { ListUsersComponent } from './pages/list-users/list-users.component';
+import { SubscriptionsComponent } from './pages/subscriptions/subscriptions.component';
+import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { RefundRequestsComponent } from './pages/refund-requests/refund-requests.component';
+import { CustomersQuestionsComponent } from './pages/customers-questions/customers-questions.component';
+import { CustomersAnswerComponent } from './pages/customers-answer/customers-answer.component';
 
 @NgModule({
   imports: [
@@ -26,6 +31,11 @@ import { ListUsersComponent } from './pages/list-users/list-users.component';
           { path: 'register-employee', component: RegisterEmployeeComponent, pathMatch: 'full' },
           { path: 'list-admins', component: ListAdminsComponent, pathMatch: 'full' },
           { path: 'list-users', component: ListUsersComponent, pathMatch: 'full' },
+          { path: 'subscriptions', component: SubscriptionsComponent, pathMatch: 'full' },
+          { path: 'transactions', component: TransactionsComponent, pathMatch: 'full' },
+          { path: 'refund-requests', component: RefundRequestsComponent, pathMatch: 'full' },
+          { path: 'customers-questions', component: CustomersQuestionsComponent, pathMatch: 'full' },
+          { path: 'customers-answer/:email/:id', component: CustomersAnswerComponent, pathMatch: 'full' },
           { path: 'charts', component: ChartsComponent, pathMatch: 'full' },
           { path: 'components', component: ComponentsComponent, pathMatch: 'full' },
           { path: '**', redirectTo: '/pages/404' },

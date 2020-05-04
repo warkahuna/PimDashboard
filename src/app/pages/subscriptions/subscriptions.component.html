@@ -1,0 +1,45 @@
+<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+  
+  <base-card>
+    <base-card-title>
+      <h1 class="mdl-card__title-text">Subscriptions</h1>
+    </base-card-title>
+    <div style ="padding-left: 1%;" >
+    <button style="font-size: 70%;padding: 2px;" 
+    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-light-blue"
+    (click)="getdata()"
+    >
+      all Subscriptions
+    </button>
+    <button style="font-size: 70%;padding: 2px;" 
+    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-light-blue"
+    (click)="getActiveSubscriptions()"
+    >
+      active Subscriptions
+    </button>
+    <button style="font-size: 70%;padding: 2px;" 
+    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-light-blue"
+    (click)="getCanceledSubscriptions()"
+    >
+      canceled Subscriptions
+    </button>
+  </div>
+    <base-card-body class="no-padding">
+
+    
+
+      <table class="mdl-data-table mdl-js-data-table bordered-table">
+        <thead>
+        <tr>
+          <th *ngFor="let header of headers" class="mdl-data-table__cell--non-numeric">{{ header }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of borderedTable">
+          <td *ngFor="let cell of row.slice(0, -1)" class="mdl-data-table__cell--non-numeric">{{ cell }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </base-card-body>
+  </base-card>
+</div>

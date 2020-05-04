@@ -32,6 +32,44 @@ export class TablesService {
     ];
   }
 
+
+  public getHeadersSubscriptions() {
+    return [
+      'plan',
+      'day started',
+      'day ends',
+      'days left',
+      'status',
+    ];
+  }
+
+  public getHeadersTransaction() {
+    return [
+      'type',
+      'amount',
+      'fee',
+      'net',
+      'date recived',
+    ];
+  }
+
+  public getHeadersRefunds() {
+    return [
+      'plan',
+      'subId',
+      'customer',
+      'days left',
+      'accept/refuse',
+    ];
+  }
+
+  public getHeadersListQuestions() {
+    return [
+      'email',
+      'question',
+      'date asked',
+    ];
+  }
  
 
   /*public getBorderedTable() {
@@ -116,6 +154,97 @@ export class TablesService {
       headers:new HttpHeaders().append('Content-Type','application/json')
     });
   }
+
+  listSubscription()
+  {
+    return this.http.get(this.url+'/subscriptionList',{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  listSubscriptionActive()
+  {
+    return this.http.get(this.url+'/subscriptionActiveList',{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  listSubscriptionCanceled()
+  {
+    return this.http.get(this.url+'/subscriptionCanceledList',{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  listTransaction()
+  {
+    return this.http.get(this.url+'/transactionList',{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  refundRequestList()
+  {
+    return this.http.get(this.url+'/refundRequestList',{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+
+  accetpRefund(body:any)
+  {
+    return this.http.post(this.url+'/refundRequestAccepted',body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  
+  }
+
+  refuseRefund(body:any)
+  {
+    return this.http.post(this.url+'/updateState',body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  listQuestions()
+  {
+    return this.http.get(this.url+'/listQuestions',{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  listClientQuestions(body:any)
+  {
+    return this.http.post(this.url+'/listClientQuestions',body,{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+
+  answerQuestion(body:any)
+  {
+    return this.http.post(this.url+'/answerQuestons',body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
 
   private sorting(array, order, value) {
     const compareFunction = (a, b) => {

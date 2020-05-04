@@ -1,0 +1,29 @@
+
+<div class="main-app carousel" style="float: center;padding-left: 20%;">
+  <div id="chat" class="carousel-cell screen" style="height: 90%;overflow: auto;">
+    <h1>chat</h1>
+      <div class="messages" *ngFor="let messages of info2">
+      
+        <div class="them message">
+          {{messages[0]}}
+          <div style="font-size: 70%;text-align: right;">
+            {{messages[2] | prettyDate}}
+        </div>
+        </div>
+        <div class="you message" *ngIf="messages[1] !== 'not answered yet';">
+          {{messages[1]}}
+          <div style="font-size: 70%;text-align: right;" *ngIf="messages[3];">
+              {{messages[3] | prettyDate}}
+          </div>
+      </div>
+      
+      </div>
+    
+  </div>
+  <form name="agent-from" [formGroup]="sendMessageForm" enctype="multipart/form-data">
+    <div class="message-field" style="width: 70%;">
+        <input formControlName="question" placeholder="ask a question" class="chat-input" type="text" />
+        <button class="send-button" (click)="sendMessage()">send</button>
+    </div>
+</form>
+</div>

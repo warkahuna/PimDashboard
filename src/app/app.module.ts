@@ -22,8 +22,16 @@ import { ToastrModule } from 'ngx-toastr';
 import { ListAdminsComponent } from './pages/list-admins/list-admins.component';
 import { ListUsersComponent } from './pages/list-users/list-users.component';
 
+import { SubscriptionsComponent } from './pages/subscriptions/subscriptions.component';
+import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { RefundRequestsComponent } from './pages/refund-requests/refund-requests.component';
+import { CustomersQuestionsComponent } from './pages/customers-questions/customers-questions.component';
+import { CustomersAnswerComponent } from './pages/customers-answer/customers-answer.component';
+import { NgxPrettyDateModule } from 'ngx-pretty-date';
+
+
 @NgModule({
-  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent],
+  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent, TransactionsComponent, SubscriptionsComponent, RefundRequestsComponent, CustomersQuestionsComponent, CustomersAnswerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,6 +55,7 @@ import { ListUsersComponent } from './pages/list-users/list-users.component';
     }), // ToastrModule added
     
     HttpClientModule,
+    NgxPrettyDateModule,
   ],
   providers: [
     AuthService,
