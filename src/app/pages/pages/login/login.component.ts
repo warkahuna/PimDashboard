@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { AuthService } from '@services/';
 import { BlankLayoutCardComponent } from 'app/components/blank-layout-card';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,9 @@ export class LoginComponent extends BlankLayoutCardComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private fb: FormBuilder,
-              private router: Router) {
+              private router: Router,
+              private cookie:CookieService
+              ) {
     super();
 
     this.loginForm = this.fb.group({
@@ -39,6 +42,7 @@ export class LoginComponent extends BlankLayoutCardComponent implements OnInit {
     this.loginForm.valueChanges.subscribe(() => {
       this.error = null;
     });
+    
   }
 
   /*public login() {
@@ -59,10 +63,15 @@ export class LoginComponent extends BlankLayoutCardComponent implements OnInit {
     }*/
     this.authService.login(JSON.stringify(this.loginForm.value)).subscribe
     (
-      res => {console.log(res);this.router.navigate(['/app/dashboard']);},
+      res => {console.log(res);this.setCookie(res);this.router.navigate(['/app/dashboard']);},
       error => this.error = error.message
     );
     console.log(JSON.stringify(this.loginForm.value));
+  }
+
+  setCookie(res)
+  {
+    this.cookie.set("id",res.id)
   }
 
   public onInputChange(event) {

@@ -39,9 +39,9 @@ export class SidebarComponent extends BaseSidebarComponent {
     { name: 'Register Employees', link: '/app/register-employee', icon: 'person' },
     { name: 'List Employees', link: '/app/list-admins', icon: 'person' },
     { name: 'List Users', link: '/app/list-users', icon: 'person' },
-    { name: 'List subscriptions', link: '/app/subscriptions', icon: 'person' },
-    { name: 'List transactions', link: '/app/transactions', icon: 'person' },
-    { name: 'refund requests', link: '/app/refund-requests', icon: 'person' },
+    { name: 'List subscriptions', link: '/app/subscriptions', icon: 'view_comfy' },
+    { name: 'List transactions', link: '/app/transactions', icon: 'view_comfy' },
+    { name: 'refund requests', link: '/app/refund-requests', icon: 'view_comfy' },
     { name: 'customers questions', link: '/app/customers-questions', icon: 'person' },
     {
       name: 'Maps', icon: 'map', children: [

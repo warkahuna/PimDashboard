@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { REACTIVE_DRIVEN_DIRECTIVES } from '@angular/forms/src/directives';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @Component({
   selector: 'app-profile',
@@ -23,7 +25,9 @@ export class ProfileComponent implements OnInit {
   public emailPattern = '^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$';
   constructor(private authService: AuthService,private toastr: ToastrService,
     private fb: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private cookie:CookieService,
+    ) {
 
     this.profileForm = this.fb.group({
       firstName: new FormControl('', Validators.required),
@@ -41,11 +45,21 @@ export class ProfileComponent implements OnInit {
     ]),
     });
 
-    this.authService.adminProfile()
+    if(this.cookie.get("id") != "")
+    {
+    this.authService.adminProfile({_id:this.cookie.get("id")})
     .subscribe(
-      data=>console.log(data),
+      data=>{console.log(data),this.profileFill(data)},
       error=>this.check(error)
     )
+    }
+    else
+    {
+      this.router.navigate(['/pages/login'])
+    }
+    
+      //console.log(this.cookie.get("id"))
+
 }
 
   ngOnInit() {
@@ -53,15 +67,19 @@ export class ProfileComponent implements OnInit {
 
   profileFill(profileData)
   {
-    //console.log(profileData)
-    this.profileForm.get('email').setValue("barbatos252@gmail.com");
-    this.profileForm.get('firstName').setValue("bi");
-    this.profileForm.get('lastName').setValue("bi");
-    this.profileForm.get('phoneNumber').setValue("123456");
+    profileData.forEach(element => {
+       //console.log(profileData)
+    this.profileForm.get('email').setValue(element.email);
+    this.profileForm.get('firstName').setValue(element.firstName);
+    this.profileForm.get('lastName').setValue(element.lastName);
+    this.profileForm.get('phoneNumber').setValue(element.phoneNumber);
     //this.profileForm.get('gender').setValue(profileData.gender);
     //this.profileForm.get('qualification').setValue(profileData.qualification);
-    this.profileForm.get('position').setValue("bi");
+    this.profileForm.get('position').setValue(element.position);
+    });
+   
   }
+
   public changeGender(gend) {
     this.profileForm.value.gender = gend.value;
   }
@@ -75,6 +93,10 @@ export class ProfileComponent implements OnInit {
 
   public update()
   {
-
+    this.authService.updateProfile(this.profileForm.value)
+    .subscribe(
+      data=>{console.log(data)},
+      error=>console.log(error)
+    )
   }
 }

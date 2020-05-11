@@ -78,9 +78,9 @@ export class AuthService {
     });
   }
 
-  adminProfile()
+  adminProfile(body:any)
   {
-    return this.http.get(this.url+'/adminProfile',{
+    return this.http.post(this.url+'/adminProfile',body,{
       observe:'body',
       withCredentials:true,
       headers:new HttpHeaders().append('Content-Type','application/json')

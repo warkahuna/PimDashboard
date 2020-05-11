@@ -29,6 +29,7 @@ import { CustomersQuestionsComponent } from './pages/customers-questions/custome
 import { CustomersAnswerComponent } from './pages/customers-answer/customers-answer.component';
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent, TransactionsComponent, SubscriptionsComponent, RefundRequestsComponent, CustomersQuestionsComponent, CustomersAnswerComponent],
@@ -69,6 +70,7 @@ import { NgxPrettyDateModule } from 'ngx-pretty-date';
       useClass: FakeBackendInterceptor,
       multi: true,
     },
+    CookieService,
   ],
   bootstrap: [AppComponent],
 })
