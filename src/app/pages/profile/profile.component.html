@@ -34,7 +34,7 @@
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--6-col">
             <material-angular-select [data]="['Male', 'Female']" [label]="'Gender'" [name]="'gender'"
-              [currentValue]="'Male'" [fixHeight]="true" (selectedValue)="changeGender($event)">
+              [currentValue]="gend" [fixHeight]="true" (selectedValue)="changeGender($event)">
             </material-angular-select>
           </div>
         </div>
@@ -62,7 +62,7 @@
           </div>
           <div class="mdl-cell mdl-cell--6-col">
             <material-angular-select [data]="qualifications" [label]="'Qualification'" [name]="'qualification'"
-              [currentValue]="'Junior'" [fixHeight]="true" (selectedValue)="changeQualification($event)">
+              [currentValue]='quali' [fixHeight]="true" (selectedValue)="changeQualification($event)">
             </material-angular-select>
           </div>
         </div>

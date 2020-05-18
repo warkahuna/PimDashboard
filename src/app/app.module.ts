@@ -30,9 +30,10 @@ import { CustomersAnswerComponent } from './pages/customers-answer/customers-ans
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 
 import { CookieService } from 'ngx-cookie-service';
+import { StatisticsComponent } from './pages/statistics/statistics.component';
 
 @NgModule({
-  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent, TransactionsComponent, SubscriptionsComponent, RefundRequestsComponent, CustomersQuestionsComponent, CustomersAnswerComponent],
+  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent, TransactionsComponent, SubscriptionsComponent, RefundRequestsComponent, CustomersQuestionsComponent, CustomersAnswerComponent, StatisticsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

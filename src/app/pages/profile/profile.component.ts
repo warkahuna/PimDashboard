@@ -16,6 +16,8 @@ export class ProfileComponent implements OnInit {
   @HostBinding('class.employer-form') private readonly employerForm = true;
   public qualifications = ['Junior', 'Middle', 'Senior'];
   email;
+  public gend='Male';
+  public quali = 'Junior';
   lastName:String = '';
   firstName:String = '';
   password:String = '';
@@ -68,13 +70,15 @@ export class ProfileComponent implements OnInit {
   profileFill(profileData)
   {
     profileData.forEach(element => {
-       //console.log(profileData)
+       console.log(element)
     this.profileForm.get('email').setValue(element.email);
     this.profileForm.get('firstName').setValue(element.firstName);
     this.profileForm.get('lastName').setValue(element.lastName);
     this.profileForm.get('phoneNumber').setValue(element.phoneNumber);
-    //this.profileForm.get('gender').setValue(profileData.gender);
-    //this.profileForm.get('qualification').setValue(profileData.qualification);
+    this.gend = element.gender
+    this.quali = element.qualification;
+    /*this.profileForm.get('gender').setValue(element.gender);
+    this.profileForm.get('qualification').setValue(element.qualification);*/
     this.profileForm.get('position').setValue(element.position);
     });
    

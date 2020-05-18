@@ -17,6 +17,7 @@ import { TransactionsComponent } from './pages/transactions/transactions.compone
 import { RefundRequestsComponent } from './pages/refund-requests/refund-requests.component';
 import { CustomersQuestionsComponent } from './pages/customers-questions/customers-questions.component';
 import { CustomersAnswerComponent } from './pages/customers-answer/customers-answer.component';
+import { StatisticsComponent } from './pages/statistics/statistics.component';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { CustomersAnswerComponent } from './pages/customers-answer/customers-ans
           { path: 'refund-requests', component: RefundRequestsComponent, pathMatch: 'full' },
           { path: 'customers-questions', component: CustomersQuestionsComponent, pathMatch: 'full' },
           { path: 'customers-answer/:email/:id', component: CustomersAnswerComponent, pathMatch: 'full' },
+          { path: 'statistics', component: StatisticsComponent, pathMatch: 'full' },
           { path: 'charts', component: ChartsComponent, pathMatch: 'full' },
           { path: 'components', component: ComponentsComponent, pathMatch: 'full' },
           { path: '**', redirectTo: '/pages/404' },

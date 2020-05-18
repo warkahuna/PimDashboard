@@ -43,6 +43,7 @@ export class SidebarComponent extends BaseSidebarComponent {
     { name: 'List transactions', link: '/app/transactions', icon: 'view_comfy' },
     { name: 'refund requests', link: '/app/refund-requests', icon: 'view_comfy' },
     { name: 'customers questions', link: '/app/customers-questions', icon: 'person' },
+    { name: 'statistics', link: '/app/statistics', icon: 'multiline_chart' },
     {
       name: 'Maps', icon: 'map', children: [
       { name: 'Simple map', link: '/maps/simple' },

@@ -54,6 +54,7 @@ export class ListUsersComponent implements OnInit {
   
   public getdata()
   {
+    this.info2 = [];
     this.tablesService.listUsers()
     .subscribe(
       data=>this.fillData(data),
@@ -103,7 +104,8 @@ export class ListUsersComponent implements OnInit {
         }
       }
     });
-    location.reload();
+    console.log("hello")
+    this.getdata()
 
   }
 
