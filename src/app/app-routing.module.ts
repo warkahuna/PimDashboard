@@ -18,6 +18,13 @@ import { RefundRequestsComponent } from './pages/refund-requests/refund-requests
 import { CustomersQuestionsComponent } from './pages/customers-questions/customers-questions.component';
 import { CustomersAnswerComponent } from './pages/customers-answer/customers-answer.component';
 
+
+
+import { CreateProductComponent } from './pages/create-product/create-product.component';
+import { ProductsListComponent } from './pages/products-list/products-list.component';
+
+
+
 @NgModule({
   imports: [
     RouterModule.forRoot(
@@ -31,6 +38,16 @@ import { CustomersAnswerComponent } from './pages/customers-answer/customers-ans
           { path: 'register-employee', component: RegisterEmployeeComponent, pathMatch: 'full' },
           { path: 'list-admins', component: ListAdminsComponent, pathMatch: 'full' },
           { path: 'list-users', component: ListUsersComponent, pathMatch: 'full' },
+
+
+
+
+          { path: 'add-product', component: CreateProductComponent, pathMatch: 'full' },
+          { path: 'products-list', component: ProductsListComponent, pathMatch: 'full' },
+
+
+
+
           { path: 'subscriptions', component: SubscriptionsComponent, pathMatch: 'full' },
           { path: 'transactions', component: TransactionsComponent, pathMatch: 'full' },
           { path: 'refund-requests', component: RefundRequestsComponent, pathMatch: 'full' },

@@ -29,16 +29,22 @@ import { CustomersQuestionsComponent } from './pages/customers-questions/custome
 import { CustomersAnswerComponent } from './pages/customers-answer/customers-answer.component';
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 
+import { CreateProductComponent } from './pages/create-product/create-product.component';
+import { ProductsListComponent } from './pages/products-list/products-list.component';
+
+
+
+
 
 @NgModule({
-  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent, TransactionsComponent, SubscriptionsComponent, RefundRequestsComponent, CustomersQuestionsComponent, CustomersAnswerComponent],
+  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent, TransactionsComponent, SubscriptionsComponent, RefundRequestsComponent, CustomersQuestionsComponent, CustomersAnswerComponent, CreateProductComponent, ProductsListComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
     DashboardModule,
     Dashboard2Module,
-    
+
     Forms,
     FormsModule,
     ReactiveFormsModule,
@@ -53,7 +59,7 @@ import { NgxPrettyDateModule } from 'ngx-pretty-date';
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }), // ToastrModule added
-    
+
     HttpClientModule,
     NgxPrettyDateModule,
   ],
