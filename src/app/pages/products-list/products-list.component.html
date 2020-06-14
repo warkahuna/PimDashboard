@@ -1,0 +1,53 @@
+<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+  <base-card>
+    <base-card-title>
+      <h1 class="mdl-card__title-text"> PRODUCT LIST : </h1>
+    </base-card-title>
+    <base-card-body class="no-padding">
+      <table class="mdl-data-table mdl-js-data-table bordered-table" style="width: 100%;" >
+        <thead>
+        <tr>
+
+          <th class="mdl-data-table__cell--non-numeric" style="width: 10%;" > IMAGE </th>
+          <th class="mdl-data-table__cell--non-numeric" style="width: 15%;" > NAME </th>
+          <th class="mdl-data-table__cell--non-numeric" style="width: 10%;" > PRICE (DT) </th>
+          <th class="mdl-data-table__cell--non-numeric" style="width: 15%;" > STOCK </th>
+          <th class="mdl-data-table__cell--non-numeric" style="width: 40%;" > DESCRIPTION </th>
+          <th class="mdl-data-table__cell--non-numeric" style="width: 10%;" > ACTION (EDIT/DELETE) </th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+
+        <tr  *ngFor="let product of Products; let i = index" >
+
+          <td  class="mdl-data-table__cell--non-numeric">
+            <img [src]="product.avatar" class="mr-3" [alt]="product.name" width="100" height="100" >
+          </td>
+
+
+          <td class="mdl-data-table__cell--non-numeric"> {{product.name}} </td>
+          <td class="mdl-data-table__cell--non-numeric"> {{product.newPrice}} DT </td>
+          <td class="mdl-data-table__cell--non-numeric"> {{product.availibilityCount}} PRODUCTS </td>
+          <td class="mdl-data-table__cell--non-numeric">
+            <textarea class="mdl-textfield__input" > {{product.description}} </textarea>
+          </td>
+
+
+
+          <td class="mdl-data-table__cell--non-numeric"  >
+
+            <button type="button" class="btn btn-info"  style="margin: 10px;"  > <i class="material-icons pull-left">edit</i> </button>
+            <button type="button" class="btn btn-danger" style="margin: 10px;"
+            (click)="deleteProduct(product._id)" > <i class="material-icons pull-left">delete</i> </button>
+
+          </td>
+        </tr>
+
+
+        </tbody>
+      </table>
+    </base-card-body>
+  </base-card>
+</div>

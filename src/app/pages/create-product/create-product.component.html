@@ -1,0 +1,108 @@
+<base-card>
+<base-card-body>
+<form class="form" [formGroup]="form" (ngSubmit)="submitForm()" >
+
+
+
+    <div class="form__article employer-form__contacts">
+
+
+<br>
+
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--9-col input-group">
+          <i class="material-icons pull-left">add_a_photo</i>
+          <div class="mdl-textfield mdl-js-textfield pull-left">
+
+            <input type="file" (change)="uploadFile($event)">
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+      <h3>PRODUCT NAME :</h3>
+
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--9-col input-group">
+          <i class="material-icons pull-left">tablet_mac</i>
+
+          <div class="mdl-textfield mdl-js-textfield pull-left">
+
+
+            <input formControlName="name" class="mdl-textfield__input"   placeholder="NAME" type="text" />
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <h3>PRODUCT PRICE :</h3>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--9-col input-group">
+          <i class="material-icons pull-left">attach_money</i>
+
+          <div class="mdl-textfield mdl-js-textfield pull-left">
+            <input formControlName="newPrice" class="mdl-textfield__input"  placeholder="PRICE DT" type="number" />
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <h3>AVAILABILITY COUNT :</h3>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--9-col input-group">
+          <i class="material-icons pull-left">event</i>
+
+          <div class="mdl-textfield mdl-js-textfield pull-left">
+            <input formControlName="availibilityCount" class="mdl-textfield__input"  placeholder="STOCK" type="number" />
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <h3>DESCRIPTION :</h3>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--9-col input-group">
+          <i class="material-icons pull-left">description</i>
+
+          <div class="mdl-textfield mdl-js-textfield pull-left">
+
+            <textarea formControlName="description" class="mdl-textfield__input" type="text" placeholder="DESCRIPTION"  ></textarea>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+
+
+
+    <div class="form__action">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" >
+         ADD  </button>
+    </div>
+
+
+  </form>
+</base-card-body>
+</base-card>
+
