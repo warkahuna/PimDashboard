@@ -18,7 +18,7 @@ import { RegisterEmployeeComponent } from './pages/register-employee/register-em
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+
 import { ListAdminsComponent } from './pages/list-admins/list-admins.component';
 import { ListUsersComponent } from './pages/list-users/list-users.component';
 
@@ -31,16 +31,19 @@ import { NgxPrettyDateModule } from 'ngx-pretty-date';
 
 import { CookieService } from 'ngx-cookie-service';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
+import { ToastrModule } from 'ngx-toastr';
+import { CreateProductComponent } from './pages/create-product/create-product.component';
+import { ProductsListComponent } from './pages/products-list/products-list.component';
 
 @NgModule({
-  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent, TransactionsComponent, SubscriptionsComponent, RefundRequestsComponent, CustomersQuestionsComponent, CustomersAnswerComponent, StatisticsComponent],
+  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent, TransactionsComponent, SubscriptionsComponent, RefundRequestsComponent, CustomersQuestionsComponent, CustomersAnswerComponent, StatisticsComponent,CreateProductComponent, ProductsListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
     DashboardModule,
     Dashboard2Module,
-    
+   
     Forms,
     FormsModule,
     ReactiveFormsModule,
