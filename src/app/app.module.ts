@@ -34,9 +34,10 @@ import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CreateProductComponent } from './pages/create-product/create-product.component';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
+import { UserActivitysComponent } from './pages/user-activitys/user-activitys.component';
 
 @NgModule({
-  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent, TransactionsComponent, SubscriptionsComponent, RefundRequestsComponent, CustomersQuestionsComponent, CustomersAnswerComponent, StatisticsComponent,CreateProductComponent, ProductsListComponent],
+  declarations: [AppComponent, ProfileComponent, RegisterEmployeeComponent, ListAdminsComponent, ListUsersComponent, TransactionsComponent, SubscriptionsComponent, RefundRequestsComponent, CustomersQuestionsComponent, CustomersAnswerComponent, StatisticsComponent,CreateProductComponent, ProductsListComponent, UserActivitysComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

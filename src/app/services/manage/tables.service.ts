@@ -32,6 +32,13 @@ export class TablesService {
     ];
   }
 
+  public getHeadersActivitys() {
+    return [
+      'user',
+      'modification',
+    ];
+  }
+
 
   public getHeadersSubscriptions() {
     return [
@@ -270,6 +277,14 @@ export class TablesService {
     });
   }
 
+  listUserActivitys()
+  {
+    return this.http.get(this.url+'/userActivitys',{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
 
   private sorting(array, order, value) {
     const compareFunction = (a, b) => {

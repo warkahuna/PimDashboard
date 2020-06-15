@@ -23,6 +23,7 @@ import { StatisticsComponent } from './pages/statistics/statistics.component';
 
 import { CreateProductComponent } from './pages/create-product/create-product.component';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
+import { UserActivitysComponent } from './pages/user-activitys/user-activitys.component';
 
 
 
@@ -39,6 +40,7 @@ import { ProductsListComponent } from './pages/products-list/products-list.compo
           { path: 'register-employee', component: RegisterEmployeeComponent, pathMatch: 'full' },
           { path: 'list-admins', component: ListAdminsComponent, pathMatch: 'full' },
           { path: 'list-users', component: ListUsersComponent, pathMatch: 'full' },
+          { path: 'user-activitys', component: UserActivitysComponent, pathMatch: 'full' },
 
 
 

@@ -44,6 +44,8 @@ export class SidebarComponent extends BaseSidebarComponent {
     { name: 'refund requests', link: '/app/refund-requests', icon: 'view_comfy' },
     { name: 'customers questions', link: '/app/customers-questions', icon: 'person' },
     { name: 'statistics', link: '/app/statistics', icon: 'multiline_chart' },
+    { name: 'userActivitys', link: '/app/user-activitys', icon: 'person' },
+    
     { name: 'ADD NEW PRODUCT', link: '/app/add-product', icon: 'add' },
     { name: 'PRODUCTS LIST', link: '/app/products-list', icon: 'list' },
 
