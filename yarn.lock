@@ -111,10 +111,10 @@
     "@angular-devkit/core" "7.2.2"
     rxjs "6.3.3"
 
-"@angular/animations@7.2.1":
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.2.1.tgz#10cdca8b68ce9a91d81b77348146d1db608fc25f"
-  integrity sha512-2AHc4HYz2cUVW3E0oYOTyUzBTnPJdtmVOx/Uo6+jnRqikvOGFOc5VXzFIYODe1Iiy+EYcSZ1lvQqwUbpZd6gwA==
+"@angular/animations@^7.2.16":
+  version "7.2.16"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.2.16.tgz#6e3f43df292bc53c3a526dabfd8025b3cd03b070"
+  integrity sha512-jH7haM3Hgtn1EW9b0Vfq6UqSz+rx3l7k+gJi9tuHEOPZdBTjtv3sNQxmM0IKxzOuTfM8KhRFkUlzyi43kfdp0w==
   dependencies:
     tslib "^1.9.0"
 
@@ -1431,7 +1431,7 @@ compressible@~2.0.13:
 
 compression@^1.5.2:
   version "1.7.2"
-  resolved "http://registry.npmjs.org/compression/-/compression-1.7.2.tgz#aaffbcd6aaf854b44ebb280353d5ad1651f59a69"
+  resolved "https://registry.npmjs.org/compression/-/compression-1.7.2.tgz#aaffbcd6aaf854b44ebb280353d5ad1651f59a69"
   dependencies:
     accepts "~1.3.4"
     bytes "3.0.0"
@@ -1642,8 +1642,9 @@ css-selector-tokenizer@^0.7.0:
     regexpu-core "^1.0.0"
 
 css-what@2.1:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.3.tgz#a6d7604573365fe74686c3f311c56513d88285f2"
+  integrity sha512-a+EPoD+uZiNfh+5fxw2nO9QwFa6nJe2Or35fGY6Ipw1R3R4AGz1d1TEZrCegvw2YTmZ0jXirGYlzxxpYSHwpEg==
 
 cssauron@^1.4.0:
   version "1.4.0"
@@ -2605,12 +2606,6 @@ get-stream@^4.1.0:
 get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
-
-getmdl-select@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/getmdl-select/-/getmdl-select-2.0.1.tgz#4bdbd77fdfd3e7b2c3fac503a32d25b0872e1321"
-  dependencies:
-    material-design-lite "^1.1.3"
 
 getpass@^0.1.1:
   version "0.1.7"
@@ -3934,7 +3929,15 @@ markdown-table@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.2.tgz#c78db948fa879903a41bce522e3b96f801c63786"
 
-material-design-lite@1.3.0, material-design-lite@^1.1.3:
+material-angular-select@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/material-angular-select/-/material-angular-select-1.0.0.tgz#ca167b0375167828049bf9edcbd1bc9bd099f96a"
+  integrity sha512-JALAKH+nw9LfmyGoOFeutohWDWvuIjCs6AVuOn2JJtsZVin90Sjytq5wMiIJF7NI2Kjo328R7g78evReDHFx0Q==
+  dependencies:
+    material-design-lite "1.3.0"
+    tslib "^1.9.0"
+
+material-design-lite@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/material-design-lite/-/material-design-lite-1.3.0.tgz#d004ce3fee99a1eeb74a78b8a325134a5f1171d3"
 
@@ -4286,6 +4289,27 @@ neo-async@^2.5.0:
 next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
+
+ngx-cookie-service@^3.0.4:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/ngx-cookie-service/-/ngx-cookie-service-3.1.3.tgz#1d2d144170036e8ab823a2a7c8cc62f8edf81f3d"
+  integrity sha512-7bKSmpoUzfz9y7KSw83UqNnFGXnssMu5hFHyXvKKeqMBnhMqrpX1caZwNjvPW/61q71fGEdS/ZLZKvEedn2Wug==
+  dependencies:
+    tslib "^1.10.0"
+
+ngx-pretty-date@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-pretty-date/-/ngx-pretty-date-1.1.0.tgz#6aad414c9347b6b0ab7fe6d3d9e9aaedc786046a"
+  integrity sha512-fizvlJPnqPI7u60zO01LPXr84uLOk5IrIwujrmaW3AdGNT7SuyEG7rk54Iuqymf0HqDZ/tV/RQ2SaA4K5o0kUA==
+  dependencies:
+    tslib "^1.9.0"
+
+ngx-toastr@^10.1.0:
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/ngx-toastr/-/ngx-toastr-10.2.0.tgz#8a79008de0b1c013f90120a53e0355af5762e969"
+  integrity sha512-6ASr5bcvQmtNKb4D2VEsQjCXyROq6GwberBWO0bVt+xcBYPUea4aRTgX8in9apX9buaTafzG+h3HlnIraspoPg==
+  dependencies:
+    tslib "^1.9.0"
 
 no-case@^2.2.0:
   version "2.3.2"
@@ -6560,6 +6584,11 @@ ts-node@6.0.5:
 tslib@1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
+
+tslib@^1.10.0:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
+  integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
 tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.1"
